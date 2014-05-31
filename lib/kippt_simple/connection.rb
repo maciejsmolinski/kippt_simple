@@ -4,7 +4,7 @@ module KipptSimple
     attr_reader :adapter
 
     def initialize client
-      @adapter ||= Faraday.new(url: URL::base) do |config|
+      @adapter ||= ::Faraday.new(url: URL::base) do |config|
         config.adapter :excon
         config.headers['X-Kippt-Username']  = client.username
         config.headers['X-Kippt-API-Token'] = client.token
