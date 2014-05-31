@@ -6,7 +6,7 @@ module KipptSimple
       attr_reader :json_data, :data
 
       def initialize data
-        @json_data, @data = data, ::OpenStruct.new(::JSON.parse(data))
+        @json_data, @data = data, ::JSON.parse(data,  object_class: OpenStruct)
       end
     end
 
