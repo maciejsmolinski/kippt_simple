@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
-require 'rspec'
-require 'kippt_simple'
+require "spec_helper"
 
 RSpec.describe KipptSimple do
 
