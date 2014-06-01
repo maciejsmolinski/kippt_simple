@@ -7,8 +7,8 @@ module KipptSimple
     attr_reader :username, :token
 
     def initialize args
-      raise ArgumentError.new('Username and token required') if args[:username].nil? or args[:token].nil? or args[:username].empty? or args[:token].empty?
-      @username, @token = args[:username], args[:token]
+      @username, @token = args.fetch(:username, ''), args.fetch(:token, '')
+      raise ArgumentError.new('Username and Token cannot be empty') if @username.empty? or @token.empty?
     end
 
     def connection
